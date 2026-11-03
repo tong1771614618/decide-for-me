@@ -1,0 +1,38 @@
+.page-container {
+  min-height: 100vh;
+  padding: 32rpx 40rpx;
+  padding-bottom: 80rpx;
+  background: #FFF8F0;
+}
+
+/* ─── 标题区 ─── */
+
+.page-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 24rpx 0 32rpx;
+  gap: 12rpx;
+}
+
+.header-title {
+  font-size: 48rpx;
+  font-weight: 300;
+  color: #333333;
+  letter-spacing: 12rpx;
+  font-style: italic;
+  font-family: 'PingFang SC', 'STKaiti', 'KaiTi', cursive, sans-serif;
+}
+
+.header-subtitle {
+  font-size: 22rpx;
+  color: #CCBBAA;
+  letter-spacing: 2rpx;
+  font-weight: 300;
+}
+
+/* ─── 操作区 ─── */
+
+.page-main {
+  width: 100%;
+}

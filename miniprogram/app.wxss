@@ -1,0 +1,33 @@
+/* ─── 全局样式 ─── */
+
+page {
+  background-color: #FFF8F0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  color: #333333;
+  font-size: 28rpx;
+  line-height: 1.6;
+}
+
+/* ─── CSS 变量（通过 class 模拟） ─── */
+
+/* 色彩 */
+/* 主色: #FF6B35 活力橙 */
+/* 背景: #FFF8F0 米白 */
+/* 辅助: #7EC8A0 薄荷绿 */
+/* 警告: #FF8A80 珊瑚红 */
+/* 主文字: #333333 */
+/* 次文字: #999999 */
+
+/* 通用圆角 */
+.radius-sm { border-radius: 8rpx; }
+.radius-md { border-radius: 16rpx; }
+.radius-lg { border-radius: 24rpx; }
+.radius-full { border-radius: 999rpx; }
+
+/* 通用投影 */
+.shadow-sm {
+  box-shadow: 0 2rpx 8rpx rgba(0, 0, 0, 0.06);
+}
+.shadow-md {
+  box-shadow: 0 4rpx 16rpx rgba(0, 0, 0, 0.08);
+}

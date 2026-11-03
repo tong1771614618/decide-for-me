@@ -1,0 +1,40 @@
+<view class="onboarding-overlay" wx:if="{{visible}}" catchtouchmove>
+  <view class="onboarding-container">
+    <!-- 跳过按钮 -->
+    <view class="onboarding-skip" bindtap="onSkip">跳过</view>
+
+    <!-- 步骤卡片 -->
+    <view class="onboarding-card">
+      <!-- Emoji 插图 -->
+      <view class="onboarding-emoji">{{steps[currentStep].emoji}}</view>
+
+      <!-- 标题 -->
+      <view class="onboarding-title">{{steps[currentStep].title}}</view>
+
+      <!-- 描述 -->
+      <view class="onboarding-desc">{{steps[currentStep].desc}}</view>
+
+      <!-- 指示点 -->
+      <view class="onboarding-dots">
+        <view
+          wx:for="{{steps}}"
+          wx:key="index"
+          class="onboarding-dot {{index === currentStep ? 'onboarding-dot--active' : ''}}"
+        ></view>
+      </view>
+    </view>
+
+    <!-- 底部按钮 -->
+    <view class="onboarding-actions">
+      <view
+        class="onboarding-prev"
+        wx:if="{{currentStep > 0}}"
+        bindtap="onPrev"
+      >上一步</view>
+      <view
+        class="onboarding-next"
+        bindtap="onNext"
+      >{{currentStep < steps.length - 1 ? '下一步' : '开始第一次纠结！'}}</view>
+    </view>
+  </view>
+</view>

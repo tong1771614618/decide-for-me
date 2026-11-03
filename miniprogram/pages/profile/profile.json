@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "history-list": "/components/history-list/history-list"
+  },
+  "navigationBarTitleText": "我的"
+}

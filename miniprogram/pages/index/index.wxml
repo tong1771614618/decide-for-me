@@ -1,0 +1,29 @@
+<view class="page-container">
+  <!-- ═══ 引导浮层 ═══ -->
+  <onboarding
+    wx:if="{{pageState === 'ONBOARDING'}}"
+    bind:complete="onOnboardingComplete"
+  />
+
+  <!-- ═══ 顶部标题 ═══ -->
+  <view class="page-header">
+    <text class="header-title">别纠结了让我选</text>
+    <text class="header-subtitle">选一种玩法，终结你的纠结</text>
+  </view>
+
+  <!-- ═══ 玩法卡片网格 ═══ -->
+  <view class="card-grid">
+    <view
+      wx:for="{{modes}}"
+      wx:key="id"
+      class="mode-card card-tap"
+      style="background: {{item.gradient}};"
+      data-url="{{item.url}}"
+      bind:tap="onCardTap"
+    >
+      <text class="card-emoji">{{item.emoji}}</text>
+      <text class="card-name">{{item.name}}</text>
+      <text class="card-desc">{{item.desc}}</text>
+    </view>
+  </view>
+</view>

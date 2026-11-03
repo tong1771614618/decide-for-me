@@ -1,0 +1,11 @@
+{
+  "usingComponents": {
+    "tier-selector": "/components/tier-selector/tier-selector",
+    "option-inputs": "/components/option-inputs/option-inputs",
+    "decide-button": "/components/decide-button/decide-button",
+    "slot-machine": "/components/slot-machine/slot-machine",
+    "result-panel": "/components/result-panel/result-panel",
+    "onboarding": "/components/onboarding/onboarding"
+  },
+  "navigationBarTitleText": "经典玩法"
+}

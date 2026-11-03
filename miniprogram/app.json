@@ -1,0 +1,37 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/classic/classic",
+    "pages/dice/dice",
+    "pages/lots/lots",
+    "pages/coin/coin",
+    "pages/profile/profile"
+  ],
+  "window": {
+    "navigationBarTitleText": "别纠结了让我选",
+    "navigationBarBackgroundColor": "#FF6B35",
+    "navigationBarTextStyle": "white",
+    "backgroundColor": "#FFF8F0"
+  },
+  "tabBar": {
+    "color": "#999999",
+    "selectedColor": "#FF6B35",
+    "backgroundColor": "#FFFFFF",
+    "borderStyle": "white",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "工具箱",
+        "iconPath": "images/tab-toolbox.png",
+        "selectedIconPath": "images/tab-toolbox-active.png"
+      },
+      {
+        "pagePath": "pages/profile/profile",
+        "text": "我的",
+        "iconPath": "images/tab-profile.png",
+        "selectedIconPath": "images/tab-profile-active.png"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
+}

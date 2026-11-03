@@ -1,0 +1,64 @@
+<view class="profile-page">
+  <!-- ═══ 用户信息卡片 ═══ -->
+  <view class="user-card">
+    <!-- 头像区 -->
+    <view class="user-avatar-wrap">
+      <button
+        wx:if="{{!hasUserInfo}}"
+        class="avatar-btn"
+        open-type="chooseAvatar"
+        bind:chooseavatar="onChooseAvatar"
+      >
+        <view class="avatar-default">
+          <text class="avatar-default-icon">😊</text>
+          <text class="avatar-default-text">点击设置头像</text>
+        </view>
+      </button>
+      <button
+        wx:else
+        class="avatar-btn avatar-btn--set"
+        open-type="chooseAvatar"
+        bind:chooseavatar="onChooseAvatar"
+      >
+        <image class="user-avatar" src="{{avatarUrl}}" mode="aspectFill" />
+      </button>
+    </view>
+
+    <!-- 昵称 -->
+    <view class="user-name-section">
+      <input
+        wx:if="{{hasUserInfo}}"
+        type="nickname"
+        class="nickname-input"
+        value="{{nickName}}"
+        placeholder="点击修改昵称"
+        bindchange="onNicknameInput"
+      />
+      <text wx:else class="nickname-placeholder">点击头像开始设置</text>
+    </view>
+
+    <!-- 统计 -->
+    <view class="user-stats" wx:if="{{hasUserInfo}}">
+      <view class="stat-item">
+        <text class="stat-num">{{totalDecisions}}</text>
+        <text class="stat-label">次决定</text>
+      </view>
+      <view class="stat-divider"></view>
+      <view class="stat-item">
+        <text class="stat-num">{{totalRerolls}}</text>
+        <text class="stat-label">次重摇</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- ═══ 历史记录（可折叠） ═══ -->
+  <view class="history-section">
+    <view class="history-toggle" bind:tap="onToggleHistory">
+      <text class="history-toggle-title">历史记录</text>
+      <text class="history-toggle-arrow {{historyExpanded ? 'history-toggle-arrow--up' : ''}}">▼</text>
+    </view>
+    <view class="history-body {{historyExpanded ? 'history-body--show' : ''}}">
+      <history-list id="historyList" show-header="{{false}}" />
+    </view>
+  </view>
+</view>

@@ -1,0 +1,20 @@
+<view class="option-inputs">
+  <view
+    wx:for="{{options}}"
+    wx:key="index"
+    class="option-row"
+  >
+    <view class="option-number">{{index + 1}}</view>
+    <input
+      class="option-input {{disabled ? 'option-input--disabled' : ''}}"
+      value="{{item}}"
+      placeholder="{{placeholders[index] || '输入选项'}}"
+      placeholder-class="option-placeholder"
+      maxlength="{{maxLength}}"
+      disabled="{{disabled}}"
+      data-index="{{index}}"
+      bindinput="onInput"
+      bindblur="onBlur"
+    />
+  </view>
+</view>

@@ -1,0 +1,5 @@
+<view class="coming-soon">
+  <view class="cs-icon">🪙</view>
+  <view class="cs-title">抛硬币</view>
+  <view class="cs-desc">开发中，敬请期待</view>
+</view>

@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "onboarding": "/components/onboarding/onboarding"
+  }
+}

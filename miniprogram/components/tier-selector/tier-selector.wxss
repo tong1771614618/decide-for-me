@@ -1,0 +1,45 @@
+.tier-selector {
+  display: flex;
+  align-items: center;
+  padding: 20rpx 0;
+}
+
+.tier-label {
+  font-size: 26rpx;
+  color: #999999;
+  margin-right: 20rpx;
+  white-space: nowrap;
+}
+
+.tier-buttons {
+  display: flex;
+  gap: 16rpx;
+  flex: 1;
+}
+
+.tier-btn {
+  width: 72rpx;
+  height: 72rpx;
+  border-radius: 999rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28rpx;
+  font-weight: 600;
+  background: #FFFFFF;
+  color: #666666;
+  border: 2rpx solid #E8E8E8;
+  transition: all 0.2s ease;
+}
+
+.tier-btn--active {
+  background: #FF6B35;
+  color: #FFFFFF;
+  border-color: #FF6B35;
+  box-shadow: 0 4rpx 12rpx rgba(255, 107, 53, 0.3);
+}
+
+.tier-btn--disabled {
+  opacity: 0.4;
+  pointer-events: none;
+}

@@ -1,0 +1,125 @@
+.slot-machine {
+  width: 100%;
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: opacity 0.3s ease, max-height 0.3s ease;
+}
+
+.slot-machine--visible {
+  opacity: 1;
+  max-height: 400px;
+  overflow: visible;
+}
+
+/* ─── 趣味文案 ─── */
+
+.slot-copy {
+  text-align: center;
+  font-size: 28rpx;
+  color: #FF6B35;
+  font-weight: 600;
+  margin-bottom: 20rpx;
+  min-height: 44rpx;
+  animation: copyFade 0.3s ease;
+}
+
+@keyframes copyFade {
+  from { opacity: 0; transform: translateY(-8rpx); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ─── 可视窗口 ─── */
+
+.slot-viewport {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  border-radius: 24rpx;
+  background: #FFFFFF;
+  box-shadow: 0 4rpx 24rpx rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+}
+
+/* ─── 遮罩渐变 ─── */
+
+.slot-mask {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 60px;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.slot-mask--top {
+  top: 0;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0));
+}
+
+.slot-mask--bottom {
+  bottom: 0;
+  background: linear-gradient(to top, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0));
+}
+
+/* ─── 高亮指示框 ─── */
+
+.slot-indicator {
+  position: absolute;
+  top: 50%;
+  left: 20rpx;
+  right: 20rpx;
+  height: 60px;
+  transform: translateY(-50%);
+  border: 4rpx solid #FF6B35;
+  border-radius: 16rpx;
+  z-index: 1;
+  pointer-events: none;
+  box-shadow: 0 0 12rpx rgba(255, 107, 53, 0.2);
+}
+
+/* ─── 滚轮长列表 ─── */
+
+.slot-strip {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+/* ─── 选项项 ─── */
+
+.slot-item {
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 40rpx;
+}
+
+.slot-item-text {
+  font-size: 34rpx;
+  color: #333333;
+  font-weight: 400;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* 高亮选中项 */
+.slot-item--active {
+  background: rgba(255, 107, 53, 0.12);
+}
+
+.slot-item--active .slot-item-text {
+  color: #FF6B35;
+  font-weight: 700;
+  font-size: 38rpx;
+}
+
+/* 搞怪选项样式 */
+.slot-item--fun .slot-item-text {
+  color: #C0A0E0;
+  font-style: italic;
+  font-size: 30rpx;
+}

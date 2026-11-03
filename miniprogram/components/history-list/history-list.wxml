@@ -1,0 +1,38 @@
+<view class="history-section">
+  <!-- 标题栏 -->
+  <view class="history-header" wx:if="{{!isEmpty}}">
+    <text class="history-title" wx:if="{{showHeader}}">最近决定</text>
+    <text class="history-clear" bindtap="onClear">清空</text>
+  </view>
+
+  <!-- 空状态 -->
+  <view class="history-empty" wx:if="{{isEmpty}}">
+    <text class="history-empty-icon">📋</text>
+    <text class="history-empty-text">还没有做过决定哦，试试你的第一次纠结吧～</text>
+  </view>
+
+  <!-- 记录列表 -->
+  <view class="history-list" wx:if="{{!isEmpty}}">
+    <view
+      wx:for="{{records}}"
+      wx:key="id"
+      class="history-card"
+    >
+      <view class="history-card-top">
+        <text class="history-time">{{item._timeStr}}</text>
+        <text class="history-reroll" wx:if="{{item.rerollCount > 0}}">摇了 {{item.rerollCount}} 次</text>
+      </view>
+      <view class="history-options">
+        <text
+          wx:for="{{item.options}}"
+          wx:for-item="opt"
+          wx:key="*this"
+          class="history-option {{opt === item.result ? 'history-option--picked' : ''}}"
+        >{{opt}}</text>
+      </view>
+      <view class="history-result">
+        → {{item.result}}
+      </view>
+    </view>
+  </view>
+</view>

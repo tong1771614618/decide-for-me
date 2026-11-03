@@ -1,0 +1,10 @@
+# 微信开发者工具
+project.private.config.json
+miniprogram/dev/
+
+# 编译产物
+miniprogram/node_modules/
+
+# 系统文件
+.DS_Store
+Thumbs.db

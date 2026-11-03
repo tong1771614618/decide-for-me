@@ -1,0 +1,14 @@
+<view class="tier-selector">
+  <view class="tier-label">纠结几项</view>
+  <view class="tier-buttons">
+    <view
+      wx:for="{{tiers}}"
+      wx:key="*this"
+      class="tier-btn {{item === current ? 'tier-btn--active' : ''}} {{disabled ? 'tier-btn--disabled' : ''}}"
+      data-tier="{{item}}"
+      bindtap="onTap"
+    >
+      {{item}}
+    </view>
+  </view>
+</view>

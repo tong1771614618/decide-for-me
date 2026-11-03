@@ -1,0 +1,61 @@
+<view class="page-container">
+  <!-- ═══ 引导浮层 ═══ -->
+  <onboarding
+    wx:if="{{pageState === 'ONBOARDING'}}"
+    bind:complete="onOnboardingComplete"
+  />
+
+  <!-- ═══ 顶部标题 ═══ -->
+  <view class="page-header">
+    <text class="header-title">别纠结了让我选</text>
+    <text class="header-subtitle">硬币抛起的一瞬间，人心中就有了答案</text>
+  </view>
+
+  <!-- ═══ 操作区 ═══ -->
+  <view class="page-main">
+    <!-- 档位选择 -->
+    <tier-selector
+      wx:if="{{pageState === 'INPUT'}}"
+      current="{{currentTier}}"
+      disabled="{{false}}"
+      bind:change="onTierChange"
+    />
+
+    <!-- 选项输入 -->
+    <option-inputs
+      wx:if="{{pageState === 'INPUT'}}"
+      options="{{options}}"
+      placeholders="{{placeholders}}"
+      disabled="{{false}}"
+      bind:change="onOptionsChange"
+    />
+
+    <!-- 决策按钮 -->
+    <decide-button
+      wx:if="{{pageState === 'INPUT'}}"
+      enabled="{{buttonEnabled}}"
+      show-hint="{{showButtonHint}}"
+      bind:decide="onDecide"
+      bind:invalid="onDecideInvalid"
+    />
+
+    <!-- ═══ 老虎机滚轮 ═══ -->
+    <slot-machine
+      id="slotMachine"
+      wx:if="{{pageState === 'SPINNING' || pageState === 'RESULT'}}"
+      visible="{{machineVisible}}"
+      options="{{machineOptions}}"
+      bind:finish="onSpinFinish"
+    />
+
+    <!-- ═══ 结果面板 ═══ -->
+    <result-panel
+      wx:if="{{pageState === 'RESULT' || pageState === 'SPINNING'}}"
+      show="{{pageState === 'RESULT'}}"
+      result="{{resultValue}}"
+      reroll-count="{{rerollCount}}"
+      bind:accept="onAccept"
+      bind:reroll="onReroll"
+    />
+  </view>
+</view>

@@ -1,0 +1,30 @@
+<view class="slot-machine {{visible ? 'slot-machine--visible' : ''}}">
+  <!-- 趣味文案 -->
+  <view class="slot-copy" wx:if="{{copyText}}">
+    <text>{{copyText}}</text>
+  </view>
+
+  <!-- 滚轮可视窗口 -->
+  <view class="slot-viewport">
+    <!-- 上下遮罩渐变 -->
+    <view class="slot-mask slot-mask--top"></view>
+    <view class="slot-mask slot-mask--bottom"></view>
+
+    <!-- 高亮指示框 -->
+    <view class="slot-indicator"></view>
+
+    <!-- 滚轮长列表 -->
+    <view
+      class="slot-strip"
+      style="transform: translateY({{currentY}}px)"
+    >
+      <view
+        wx:for="{{stripItems}}"
+        wx:key="index"
+        class="slot-item {{item.originalIndex === activeItem ? 'slot-item--active' : ''}} {{item.isFun ? 'slot-item--fun' : ''}}"
+      >
+        <text class="slot-item-text">{{item.text}}</text>
+      </view>
+    </view>
+  </view>
+</view>

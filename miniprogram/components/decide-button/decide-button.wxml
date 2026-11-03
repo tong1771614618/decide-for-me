@@ -1,0 +1,11 @@
+<view class="decide-btn-wrapper">
+  <view
+    class="decide-btn {{enabled ? 'decide-btn--active' : 'decide-btn--disabled'}}"
+    bindtap="onTap"
+  >
+    <text class="decide-btn-text">帮我决定！</text>
+  </view>
+  <view wx:if="{{showHint && !enabled}}" class="decide-hint">
+    至少填写 2 个选项才能开始哦
+  </view>
+</view>

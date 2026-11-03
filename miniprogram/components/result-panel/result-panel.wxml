@@ -1,0 +1,36 @@
+<view class="result-overlay" wx:if="{{show}}">
+  <!-- 彩带粒子 -->
+  <view class="confetti-layer" wx:if="{{showConfetti}}">
+    <view
+      wx:for="{{confettiPieces}}"
+      wx:key="index"
+      class="confetti-piece"
+      style="left: {{item.left}}%; background: {{item.color}}; width: {{item.width}}px; height: {{item.height}}px; animation-delay: {{item.delay}}s; animation-duration: {{item.duration}}s; transform: rotate({{item.rotate}}deg);"
+    ></view>
+  </view>
+
+  <!-- 结果弹窗 -->
+  <view class="result-card">
+    <!-- 趣味文案 -->
+    <view class="result-copy">{{copyText}}</view>
+
+    <!-- 结果文字（放大加粗） -->
+    <view class="result-value">{{result}}</view>
+
+    <!-- 装饰线 -->
+    <view class="result-divider"></view>
+
+    <!-- 操作按钮 -->
+    <view class="result-actions">
+      <view class="result-btn result-btn--accept" bindtap="onAccept">
+        就它了
+      </view>
+      <view
+        class="result-btn result-btn--reroll {{canReroll ? '' : 'result-btn--disabled'}}"
+        bindtap="onReroll"
+      >
+        {{canReroll ? '有点纠结，再来一次' : '命运已定！'}}
+      </view>
+    </view>
+  </view>
+</view>
